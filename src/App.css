@@ -1,13 +1,17 @@
 body {
   background: #e0e4eb;
   font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .app-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: rgb(162, 210, 194);
+  padding: 20px;
 }
 
 .upload-box {
@@ -16,7 +20,8 @@ body {
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 50%;
+  width: 100%;
+  max-width: 600px; /* Limit maximum width for larger screens */
 }
 
 .upload-icon {
@@ -33,6 +38,7 @@ body {
   display: inline-block;
   margin-top: 10px;
   border: none;
+  transition: background-color 0.3s;
 }
 
 .upload-btn:hover {
@@ -81,4 +87,47 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .upload-box {
+    width: 90%; /* Adjust width for tablets and smaller screens */
+    padding: 20px;
+  }
+
+  .upload-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .image-item {
+    width: 100px; /* Smaller image items for smaller screens */
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-box {
+    width: 100%; /* Full width for mobile screens */
+    padding: 15px;
+  }
+
+  .upload-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .image-item {
+    width: 80px; /* Even smaller image items for mobile screens */
+    height: 80px;
+  }
+
+  .remove-icon {
+    top: -6px;
+    right: -6px;
+    font-size: 14px;
+    width: 18px;
+    height: 18px;
+  }
 }
