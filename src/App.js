@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ImageUploader from "./components/ImageUploader";
+import ImageList from "./components/ImageList";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [refresh, setRefresh] = useState(false);
+
+  const handleUploadSuccess = () => {
+    setRefresh((prev) => !prev);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="upload-box">
+        <ImageUploader onUploadSuccess={handleUploadSuccess} />
+        <ImageList key={refresh} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;

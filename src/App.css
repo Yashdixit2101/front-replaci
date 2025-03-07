@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+body {
+  background: #e0e4eb;
+  font-family: "Arial", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.upload-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 50%;
+}
+
+.upload-icon {
+  font-size: 40px;
+  color: #555;
+}
+
+.upload-btn {
+  background-color: #2d2d5e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  border: none;
+}
+
+.upload-btn:hover {
+  background-color: #1e1e4a;
+}
+
+.image-preview {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.image-item {
+  position: relative;
+  border: 2px solid #dfe4ea;
+  border-radius: 8px;
+  padding: 5px;
+  background: #f8f9fb;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 120px;
+  height: 120px;
+}
+
+.image-thumb {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.remove-icon {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e74c3c;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
